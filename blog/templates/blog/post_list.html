@@ -7,10 +7,12 @@
 	<header>
 		<h1><a href="/">Spongeblog</a></h1>
 	</header>
-	<article>
-		<time>published: 19.2.2023, 19:03</time>
-		<h2><a href="">Post 1</a></h2>
-		<p>deadass im going crazy rn. fr we on that grind nonstop</p>
-	</article>
+	{% for post in posts %}
+		<article>
+			<time>published: {{ post.published_date }}</time>
+			<h2><a href=""> {{ post.title }}</a></h2>
+			<p>{{ post.text|linebreaksbr }}</p>
+		</article>
+	{% endfor %}
 </body>
 </html>
